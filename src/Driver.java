@@ -31,6 +31,15 @@ public class Driver {
 
         Icon i2 = new Icon(2,2);
 
+        i2.setPixelRGB(0,0,20,20,60);
+        i2.setPixelRGB(1,1,30,30,60);
+
         System.out.println(i2.toString());
+        System.out.println("\n");
+
+        System.out.println(i2.getPixelRGB(1,1));
+        System.out.println("\n");
+
+
     }
 }

@@ -39,19 +39,30 @@ public class Icon
     // State management
     public String getPixelRGB(int row, int col)
     {
+        String retVal = "";
+
         if(inBounds(row, col))
         {
-
+            for(int i = 0; i < row; i++){
+                for(int j = 0; j < col; j++) {
+                    retVal = pixels.get(i).get(j).toString();
+                }
+            }
         }
-
+        return retVal;
     }
 
-    public void setPixelRGB(int row, int col){
+    public void setPixelRGB(int row, int col, int rVal, int gVal, int bVal)
+    {
         if(inBounds(row, col))
         {
+            pixels.get(row).get(col).setRedVal(rVal);
+            pixels.get(row).get(col).setGreenVal(gVal);
+            pixels.get(row).get(col).setBlueVal(bVal);
 
         }
     }
+
 
     private boolean inBounds(int row, int col)
     {
