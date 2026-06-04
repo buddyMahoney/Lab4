@@ -13,7 +13,7 @@ public class Pixel
 
     public String toString()
     {
-        String pixelString = "Red: " + getRedVal()+ ", Green: " + getGreenVal() + ", Blue: " + getBlueVal();
+        String pixelString = "[Red: " + getRedVal()+ ", Green: " + getGreenVal() + ", Blue: " + getBlueVal() + "]";
         return pixelString;
     }
 
