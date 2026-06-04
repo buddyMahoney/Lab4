@@ -5,7 +5,6 @@ public class Icon
 {
     private ArrayList < ArrayList < Pixel >> pixels = new ArrayList < ArrayList < Pixel >>();
 
-    // this is not quite right
     public Icon()
     {
         int defaultSize = 5;
@@ -21,7 +20,6 @@ public class Icon
         }
     }
 
-    // this is not quite right
     public Icon(int rows, int cols)
     {
         for(int i = 0; i < rows; i++)
