@@ -40,6 +40,8 @@ public class Driver {
         System.out.println(i2.getPixelRGB(1,1));
         System.out.println("\n");
 
+        System.out.println(p2.toHex());
+        System.out.println(p3.toHex());
 
     }
 }

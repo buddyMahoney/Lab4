@@ -1,14 +1,11 @@
 public class Pixel
 {
-    private int redVal;
-    private int greenVal;
-    private int blueVal;
+    private int rgb;
+
 
     public Pixel()
     {
-        this.redVal = 0;
-        this.greenVal = 0;
-        this.blueVal = 0;
+        this.rgb = 0;
     }
 
     public String toString()
@@ -19,6 +16,9 @@ public class Pixel
 
     public int getRedVal()
     {
+        int redMask = 0b000000000000000011111111;
+
+        int redVal = rgb & redMask;
         return redVal;
     }
 
@@ -26,12 +26,15 @@ public class Pixel
     {
         if(rV >= 0 && rV <= 255)
         {
-            this.redVal = rV;
+            this.rgb = rV;
         }
     }
 
     public int getGreenVal()
     {
+        int greenMask = 0b000000001111111100000000;
+
+        int greenVal = (rgb & greenMask) >> 8;
         return greenVal;
     }
 
@@ -39,20 +42,30 @@ public class Pixel
     {
         if(gV >= 0 && gV <= 255)
         {
-            this.greenVal = gV;
+            this.rgb = rgb + (gV << 8);
         }
     }
 
     public int getBlueVal()
     {
-            return blueVal;
+        int blueMask = 0b111111110000000000000000;
+
+        int blueVal = (rgb & blueMask) >> 16;
+        return blueVal;
     }
 
     public void setBlueVal(int bV)
     {
         if(bV >= 0 && bV <= 255)
         {
-            this.blueVal = bV;
+            this.rgb = rgb + (bV << 16);
         }
+    }
+
+    public String toHex(){
+        String redHex = Integer.toHexString(getRedVal());
+        String greenHex = Integer.toHexString(getGreenVal());
+        String blueHex = Integer.toHexString(getBlueVal());
+        return "Red: " + redHex + " Green: " + greenHex + " Blue: " + blueHex;
     }
 }
