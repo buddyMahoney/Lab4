@@ -26,7 +26,9 @@ public class Pixel
     {
         if(rV >= 0 && rV <= 255)
         {
-            this.rgb = rV;
+            int redMask = 0b11111111111111111111111100000000;
+            rgb = rgb & redMask;
+            rgb = rgb + rV;
         }
     }
 
@@ -42,7 +44,9 @@ public class Pixel
     {
         if(gV >= 0 && gV <= 255)
         {
-            this.rgb = rgb + (gV << 8);
+            int greenMask = 0b11111111111111110000000011111111;
+            rgb = rgb & greenMask;
+            rgb = rgb + (gV << 8);
         }
     }
 
@@ -56,9 +60,12 @@ public class Pixel
 
     public void setBlueVal(int bV)
     {
+
         if(bV >= 0 && bV <= 255)
         {
-            this.rgb = rgb + (bV << 16);
+            int blueMask = 0b11111111000000001111111111111111;
+            rgb = rgb & blueMask;
+            rgb = rgb + (bV << 16);
         }
     }
 

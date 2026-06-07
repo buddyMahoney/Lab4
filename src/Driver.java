@@ -26,6 +26,11 @@ public class Driver {
         System.out.println("\n");
 
         Icon i = new Icon();
+        i.setPixelRGB(0, 0, 255, 0, 0);
+        i.setPixelRGB(0, 4, 0, 255, 0);
+        i.setPixelRGB(4, 0 , 0, 0, 255);
+        i.setPixelRGB(4, 4 , 255, 255, 255);
+
 
         System.out.println(i.toString());
 
@@ -43,5 +48,18 @@ public class Driver {
         System.out.println(p2.toHex());
         System.out.println(p3.toHex());
 
+
+        Pixel p4 = new Pixel();
+        System.out.println(p4.toHex()); //#000000 two digits for each color
+
+//give each color a value
+        p4.setRedVal(20);
+        p4.setGreenVal(40);
+        p4.setBlueVal(60);
+        System.out.println(p4.toHex()); //#14283C
+
+//change green only
+        p4.setGreenVal(140);
+        System.out.println(p4.toHex()); //#148C3C 14 and 3C should not change
     }
 }
