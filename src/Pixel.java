@@ -63,9 +63,27 @@ public class Pixel
     }
 
     public String toHex(){
-        String redHex = Integer.toHexString(getRedVal());
-        String greenHex = Integer.toHexString(getGreenVal());
-        String blueHex = Integer.toHexString(getBlueVal());
-        return "Red: " + redHex + " Green: " + greenHex + " Blue: " + blueHex;
+        String redHex = "";
+        String greenHex = "";
+        String blueHex = "";
+
+        if(getRedVal() < 16) {
+            redHex = "0";
+        }
+
+        if(getGreenVal() < 16) {
+            greenHex = "0";
+        }
+
+        if(getBlueVal() < 16) {
+            blueHex = "0";
+        }
+
+        redHex += Integer.toHexString(getRedVal());
+        greenHex += Integer.toHexString(getGreenVal());
+        blueHex += Integer.toHexString(getBlueVal());
+
+
+        return "#" + redHex + greenHex + blueHex;
     }
 }
