@@ -25,7 +25,7 @@ public class Driver {
         System.out.println(p3.toString());
         System.out.println("\n");
 
-        Icon i = new Icon();
+        Icon i = new Icon(2, 17);
         i.setPixelRGB(0, 0, 255, 0, 0);
         i.setPixelRGB(0, 4, 0, 255, 0);
         i.setPixelRGB(4, 0 , 0, 0, 255);
@@ -36,8 +36,10 @@ public class Driver {
 
         Icon i2 = new Icon(2,2);
 
-        i2.setPixelRGB(0,0,20,20,60);
-        i2.setPixelRGB(1,1,30,30,60);
+        i2.setPixelRGB(0,0,0,0,255);
+        i2.setPixelRGB(0,1,0,255,0);
+        i2.setPixelRGB(1,0,255,0,0);
+        i2.setPixelRGB(1,1,255,255,255);
 
         System.out.println(i2.toString());
         System.out.println("\n");
@@ -47,7 +49,6 @@ public class Driver {
 
         System.out.println(p2.toHex());
         System.out.println(p3.toHex());
-
 
         Pixel p4 = new Pixel();
         System.out.println(p4.toHex()); //#000000 two digits for each color
@@ -61,5 +62,9 @@ public class Driver {
 //change green only
         p4.setGreenVal(140);
         System.out.println(p4.toHex()); //#148C3C 14 and 3C should not change
+
+        i2.createBitmap("/Users/buddymahoney/Documents/test.bmp");
+        i.createBitmap("/Users/buddymahoney/Documents/test2.bmp");
+        //Icon i3 = new Icon();
     }
 }

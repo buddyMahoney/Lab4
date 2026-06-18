@@ -69,23 +69,30 @@ public class Pixel
         }
     }
 
-    public String toHex(){
+    // returns the pixel's RGB values as a hex color string
+    public String toHex()
+    {
         String redHex = "";
         String greenHex = "";
         String blueHex = "";
 
-        if(getRedVal() < 16) {
+        //if a value is less than 16 its hex representation is only 1 digit so we pad it with a 0
+        if(getRedVal() < 16)
+        {
             redHex = "0";
         }
 
-        if(getGreenVal() < 16) {
+        if(getGreenVal() < 16)
+        {
             greenHex = "0";
         }
 
-        if(getBlueVal() < 16) {
+        if(getBlueVal() < 16)
+        {
             blueHex = "0";
         }
 
+        // convert each channel value to its 2 digit hex representation
         redHex += Integer.toHexString(getRedVal());
         greenHex += Integer.toHexString(getGreenVal());
         blueHex += Integer.toHexString(getBlueVal());
